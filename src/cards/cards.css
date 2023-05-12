@@ -1,0 +1,145 @@
+.datapage-main-container{
+    width: 100%;
+    height: 100%;
+    
+}
+.datapage-navbar{
+    width: 100%;
+    height: 10%;
+    background-color: #35e3f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+}
+.navbar-text{
+    color:white;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.search-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+    gap: 5%;
+}
+.pagination-container{
+    display: flex;
+    justify-content: center;
+}
+.main-frame{
+    display: flex;
+    justify-content: center;
+    
+}
+.cards-container{
+    margin-top: 5%;
+    /* margin-top: 10%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    width: 80%;
+    height: auto;
+   
+}
+.main-items-holder{
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    width: 22%;
+    border-radius: 20px;
+   margin-bottom: 2%;
+}
+.main-items-holder:hover{
+    box-shadow: 2px 2px 2px 2px green;
+}
+
+
+.inner-texts{
+    margin-top: 20px;
+}
+
+
+.inner-texts-last{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.invisible-container{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    margin-top: 3%;
+    justify-content: center;
+    /* background-color: red; */
+    gap: 5%;
+}
+.domain-select-component{
+    width: 10%;
+    height: 30%;
+}
+
+
+@media screen and (max-width:1270px) {
+    .search-div{
+        margin-top: 12%;
+    }
+    .main-items-holder{
+        width: 38%;
+    }
+   
+}
+@media screen and (max-width:1417px) {
+    .main-items-holder{
+        width: 30%;
+    }
+}
+@media screen and (max-width:895px) {
+    .search-div{
+        margin-top: 15%;
+    }
+    .main-items-holder{
+        width: 40%;
+    }
+}
+@media screen and (max-width:770px){
+    .main-items-holder{
+        width: 70%;
+    }
+    
+}
+@media screen and (max-width:640px){
+    /* .main-items-holder{
+        width: 60%;
+    } */
+    .search-div{
+        margin-top: 20%;
+    }
+    
+}
+@media screen and (max-width:391px){
+    .main-items-holder{
+        width: 100%;
+    }
+    .search-div{
+        margin-top: 25%;
+    }
+    .pagination-container{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .inner-texts{
+        font-size: 20px;
+    }
+    .inner-texts-last{
+        font-size: 20px;
+    }
+    .invisible-container{
+        margin-top: 5%;
+    }
+    
+}
