@@ -1,0 +1,42 @@
+.show-div-main{
+    width: 100%;
+    height: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    
+}
+.show-createtext{
+    text-align: center;
+    font-size: 40px;
+    color: green;
+    margin-top: 10px;
+}
+.show-details-cont{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.show-details-cont1{
+    width: 25%;
+    height: 20%;
+    border:1px solid gray  ;
+    border-radius: 5%;
+   
+}
+.show-text{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.show-text-last{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+@media screen and (max-width:391px) {
+    .show-details-cont1{
+        width: 60%;
+    }
+    
+}

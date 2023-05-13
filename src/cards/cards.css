@@ -8,11 +8,12 @@
     height: 10%;
     background-color: #35e3f2;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0px;
     z-index: 1;
+    /* gap: 40%; */
 }
 .navbar-text{
     color:white;
@@ -113,9 +114,7 @@
     
 }
 @media screen and (max-width:640px){
-    /* .main-items-holder{
-        width: 60%;
-    } */
+    
     .search-div{
         margin-top: 20%;
     }
@@ -140,6 +139,13 @@
     }
     .invisible-container{
         margin-top: 5%;
+    }
+    .domain-select-component{
+        width: 25%;
+        height: 30%;
+    }
+    .datapage-navbar{
+       gap: 10%;
     }
     
 }

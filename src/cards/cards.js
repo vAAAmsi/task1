@@ -2,20 +2,20 @@ import { useState,useEffect } from "react";
 import Data from '../Data/Data.json'
 import '../cards/cards.css'
 import { Button, Pagination, TextField } from "@mui/material";
-
+import { useNavigate } from "react-router-dom";
 
 
 export default function DataAquring(){
     const [data,setData]=useState([]);
     const [page,setPage]=useState([]);
     const [searchname,setSearchname]=useState('');
-    const[a,setA]=useState(false)
+    const[a,setA]=useState(false);
+    const [b,setB]=useState(false);
     const [domainFilter, setDomainFilter] = useState('');
     const [genderFilter, setGenderFilter] = useState('');
     const [availabilityFilter, setAvailabilityFilter] = useState('');
-    let tr=parseInt(true);
-    let fa=parseInt(false);
-    // console.log(tr)
+    let navigate=useNavigate()
+    console.log(availabilityFilter)
     useEffect(()=>{
         setData(Data);
         setPage(Data.slice(0,20))
@@ -33,13 +33,17 @@ export default function DataAquring(){
         setGenderFilter(e.target.value)
     }
     const selectAvailability = (e)=>{
-        setAvailabilityFilter(e.target.value)
+        setAvailabilityFilter(parseInt(e.target.value))
+        // console.log(availabilityFilter)
     }
-    console.log(domainFilter,genderFilter,availabilityFilter)
+    
     
     const filteredData = page.filter(item => {
-        if(searchname && item.first_name !==searchname){
-            const nameMatch = item.first_name.toLowerCase().includes(searchname.toLowerCase());
+        let full_name=(`${item.first_name}${item.last_name}`)
+        // console.log('fullname',full_name.toLocaleLowerCase())
+        if(searchname && item.full_name !==searchname){
+            const nameMatch = full_name.toLowerCase().includes(searchname.toLowerCase());
+           
             return nameMatch;
         }
         if (domainFilter && item.domain !== domainFilter) {
@@ -62,8 +66,12 @@ export default function DataAquring(){
     return(
         <div className="datapage-main-container">
             <div className="datapage-navbar">
+                <div></div>
                 <div className="navbar-text">DATA</div>
+                <Button onClick={()=>navigate('/team-creation')} style={{backgroundColor:'red',color:'white',marginRight:'20px'}} >Team</Button>
+                
             </div>
+            
            <div className="search-div">
                 <TextField onChange={(e)=>setSearchname(e.target.value)} value={searchname} style={{width:'70%'}} label='search'></TextField>
                 <Button onClick={()=>setA(!a)} style={{backgroundColor:'red',color:'white'}}>Filters</Button>
@@ -83,8 +91,9 @@ export default function DataAquring(){
                 
                 <select onChange={(e)=>selectGender(e)} name="domain" className="domain-select-component">
                         <option value="">Gender</option>
-                        <option value="Male">Male</option>
+                        <option value='Male' >Male</option>
                         <option value="Female">Female</option>
+                        <option value="Agender">Agender</option>
                 </select>
                 <select onChange={(e)=>selectAvailability(e)} name="availability" className="domain-select-component">
                     <option value="">Availability</option>
@@ -109,7 +118,8 @@ export default function DataAquring(){
                    
                     filteredData.map((mapdata,index)=>{
                         let Availability=mapdata.available.toString();
-                        // console.log(Availability)
+                        
+                        
                         return(
                             <div className="main-items-holder" key={index}> 
                                 <div className="items-holder">
